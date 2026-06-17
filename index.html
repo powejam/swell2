@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Swell — UK surf conditions</title>
+  <meta name="description" content="Live wave, swell, wind, water and weather for 20 of the UK's best surf beaches." />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b1d26" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Swell" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Swell</span>
+    </div>
+    <button id="refresh" class="refresh" type="button" aria-label="Refresh conditions">
+      <span class="refresh-icon" aria-hidden="true">↻</span>
+      <span id="updated" class="updated">—</span>
+    </button>
+  </header>
+
+  <section class="hero" aria-label="Live conditions for the selected beach">
+    <canvas id="sea" class="sea"></canvas>
+    <div class="hero-readout">
+      <p class="hero-region" id="heroRegion"></p>
+      <h1 class="hero-beach" id="heroBeach">Loading…</h1>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </section>
+
+  <main id="regions" class="regions" aria-live="polite"></main>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <footer class="foot">
+    <p>Wave &amp; sea data from the <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> Marine and Forecast APIs. Significant wave height shown. Tap a beach to ride it.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
